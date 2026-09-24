@@ -212,9 +212,9 @@ private fun OwnerGlassBottomBar(
                     Brush.horizontalGradient(
                         colors = listOf(
                             Color.Transparent,
-                            Color(0x40FFFFFF),
-                            ByceNeonGreen.copy(alpha = 0.4f),
-                            Color(0x40FFFFFF),
+                            Color(0x25FFFFFF),
+                            Color(0x50FFFFFF),
+                            Color(0x25FFFFFF),
                             Color.Transparent
                         )
                     )
@@ -240,7 +240,7 @@ private fun OwnerGlassBottomBar(
                     Icon(
                         imageVector = icon,
                         contentDescription = route.title,
-                        tint = if (isSelected) ByceNeonGreen else TextSubtle,
+                        tint = if (isSelected) TextWhite else TextSubtle,
                         modifier = Modifier.size(22.dp)
                     )
                     Spacer(modifier = Modifier.height(3.dp))
@@ -250,11 +250,12 @@ private fun OwnerGlassBottomBar(
                         fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
                         color = if (isSelected) TextWhite else TextSubtle
                     )
-                    Spacer(modifier = Modifier.height(2.dp))
+                    Spacer(modifier = Modifier.height(3.dp))
                     Box(
                         modifier = Modifier
-                            .size(3.dp)
-                            .background(if (isSelected) ByceNeonGreen else Color.Transparent, CircleShape)
+                            .size(4.dp)
+                            .clip(CircleShape)
+                            .background(if (isSelected) NeonGreen else Color.Transparent)
                     )
                 }
             }

@@ -574,13 +574,13 @@ private fun QuickActionButton(
                 modifier = Modifier
                     .size(34.dp)
                     .clip(CircleShape)
-                    .background(ByceNeonGreen.copy(alpha = 0.20f)),
+                    .background(Color(0x22FFFFFF)),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
                     imageVector = icon,
                     contentDescription = label,
-                    tint = ByceNeonGreen,
+                    tint = TextWhite,
                     modifier = Modifier.size(18.dp)
                 )
             }

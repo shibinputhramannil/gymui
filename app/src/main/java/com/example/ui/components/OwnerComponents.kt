@@ -108,8 +108,15 @@ fun OwnerHeader(
                                 text = "GYM OWNER",
                                 fontSize = 10.sp,
                                 fontWeight = FontWeight.ExtraBold,
-                                color = ByceNeonGreen,
+                                color = TextSubtle,
                                 letterSpacing = 1.sp
+                            )
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Box(
+                                modifier = Modifier
+                                    .size(5.dp)
+                                    .clip(CircleShape)
+                                    .background(NeonGreen)
                             )
                         }
                         Text(
@@ -262,7 +269,7 @@ fun OwnerKpiCard(
                     Icon(
                         imageVector = icon,
                         contentDescription = title,
-                        tint = ByceNeonGreen,
+                        tint = TextWhite,
                         modifier = Modifier.size(16.dp)
                     )
                 }
@@ -318,16 +325,25 @@ fun OwnerStatusBadge(
         modifier = modifier
             .clip(RoundedCornerShape(8.dp))
             .background(bgColor)
-            .border(0.5.dp, textColor.copy(alpha = 0.4f), RoundedCornerShape(8.dp))
+            .border(0.5.dp, textColor.copy(alpha = 0.35f), RoundedCornerShape(8.dp))
             .padding(horizontal = 8.dp, vertical = 3.dp),
         contentAlignment = Alignment.Center
     ) {
-        Text(
-            text = status,
-            fontSize = 11.sp,
-            fontWeight = FontWeight.SemiBold,
-            color = textColor
-        )
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Box(
+                modifier = Modifier
+                    .size(5.dp)
+                    .clip(CircleShape)
+                    .background(textColor)
+            )
+            Spacer(modifier = Modifier.width(5.dp))
+            Text(
+                text = status,
+                fontSize = 11.sp,
+                fontWeight = FontWeight.Bold,
+                color = textColor
+            )
+        }
     }
 }
 

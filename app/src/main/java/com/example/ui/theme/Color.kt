@@ -12,9 +12,9 @@ val ByceGreen = Color(0xFFE2E8F0) // Main UI accent matching the dark glass them
 val ByceGreenGlow = Color(0x38FFFFFF)
 val ByceGreenHighlight = Color(0x80FFFFFF)
 
-// Vibrant Neon Accent - Electric Mint Cyan matching the liquid glass UI and Cult Aurora
-val NeonGreen = Color(0xFF2DD4BF)
-val NeonGreenGlow = Color(0x382DD4BF)
+// Vibrant Neon Accent - Original Base App Lime Citron (#A6CE39)
+val NeonGreen = Color(0xFFA6CE39)
+val NeonGreenGlow = Color(0x60A6CE39)
 
 // Translucent Glass Palette
 val GlassSurfaceLight = Color(0x1FFFFFFF)
@@ -31,16 +31,16 @@ val TextWhite = Color(0xFFFFFFFF)
 val TextMuted = Color(0xCCFFFFFF)
 val TextSubtle = Color(0x88FFFFFF)
 
-// Official BYCE Brand Palette (matching modern liquid glass UI)
-val ByceNeonGreen = Color(0xFF2DD4BF) // Vibrant Mint Aqua Cyan
-val ByceDeepGreen = Color(0xFF0F4A45) // Deep cyan-teal depth
+// Official BYCE Brand Palette (matching the original base theme)
+val ByceNeonGreen = Color(0xFFA6CE39)
+val ByceDeepGreen = Color(0xFF0B4F30)
 val ByceCoolGray = Color(0xFF8A8D93)
 val ByceOffWhite = Color(0xFFF8F5EE)
 val ByceCharcoalBlack = Color(0xFF000000)
 
 // Status Colors for Dashboard and Tables
-val StatusActiveGreen = Color(0xFF2DD4BF)
-val StatusActiveGreenBg = Color(0x222DD4BF)
+val StatusActiveGreen = Color(0xFFA6CE39)
+val StatusActiveGreenBg = Color(0x20A6CE39)
 val StatusPendingAmber = Color(0xFFE5A510)
 val StatusPendingAmberBg = Color(0x20E5A510)
 val StatusExpiredRed = Color(0xFFE05252)
