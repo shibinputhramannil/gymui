@@ -63,7 +63,7 @@ fun OwnerBookingsScreen(
                     text = "CHECK-IN RESERVATIONS",
                     fontSize = 11.sp,
                     fontWeight = FontWeight.ExtraBold,
-                    color = ByceNeonGreen,
+                    color = TextSubtle,
                     letterSpacing = 1.sp
                 )
                 Text(
@@ -187,7 +187,7 @@ private fun BookingRowCard(
                     Icon(
                         imageVector = Icons.Default.AccessTime,
                         contentDescription = null,
-                        tint = ByceNeonGreen,
+                        tint = TextWhite,
                         modifier = Modifier.size(14.dp)
                     )
                     Spacer(modifier = Modifier.width(6.dp))
@@ -210,7 +210,7 @@ private fun BookingRowCard(
                             text = "View",
                             fontSize = 11.sp,
                             fontWeight = FontWeight.Bold,
-                            color = ByceNeonGreen
+                            color = TextWhite
                         )
                     }
 

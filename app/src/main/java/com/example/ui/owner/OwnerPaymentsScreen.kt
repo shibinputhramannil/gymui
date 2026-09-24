@@ -58,7 +58,7 @@ fun OwnerPaymentsScreen(
                     text = "FINANCIAL LEDGER",
                     fontSize = 11.sp,
                     fontWeight = FontWeight.ExtraBold,
-                    color = ByceNeonGreen,
+                    color = TextSubtle,
                     letterSpacing = 1.sp
                 )
                 Text(
@@ -75,8 +75,8 @@ fun OwnerPaymentsScreen(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
-                    MiniPaymentKpi("Total Revenue", "₹4,82,500", ByceNeonGreen, Modifier.weight(1f))
-                    MiniPaymentKpi("Successful", "942", StatusActiveGreen, Modifier.weight(1f))
+                    MiniPaymentKpi("Total Revenue", "₹4,82,500", TextWhite, Modifier.weight(1f))
+                    MiniPaymentKpi("Successful", "942", TextWhite, Modifier.weight(1f))
                 }
                 Spacer(modifier = Modifier.height(10.dp))
                 Row(
@@ -189,7 +189,7 @@ private fun PaymentRowCard(
                 Icon(
                     imageVector = Icons.Default.Receipt,
                     contentDescription = null,
-                    tint = ByceNeonGreen,
+                    tint = TextWhite,
                     modifier = Modifier.size(18.dp)
                 )
             }
@@ -271,7 +271,7 @@ private fun PaymentDetailModal(
                     text = "₹${payment.amount.toInt()}",
                     fontSize = 28.sp,
                     fontWeight = FontWeight.ExtraBold,
-                    color = ByceNeonGreen
+                    color = TextWhite
                 )
                 Text(text = "Transaction ${payment.transactionId}", fontSize = 12.sp, color = ByceCoolGray)
 
@@ -305,9 +305,10 @@ private fun PaymentDetailModal(
                         .clip(RoundedCornerShape(16.dp))
                         .background(
                             Brush.verticalGradient(
-                                colors = listOf(Color(0xFF6B9330), Color(0xFF4E7320))
+                                colors = listOf(Color(0x35FFFFFF), Color(0x20FFFFFF))
                             )
                         )
+                        .border(1.dp, GlassBorderSpecular, RoundedCornerShape(16.dp))
                         .clickable { onDismiss() }
                         .padding(vertical = 12.dp),
                     contentAlignment = Alignment.Center

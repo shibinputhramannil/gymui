@@ -55,7 +55,7 @@ fun OwnerSettingsScreen(
             text = "PREFERENCES & SECURITY",
             fontSize = 11.sp,
             fontWeight = FontWeight.ExtraBold,
-            color = ByceNeonGreen,
+            color = TextSubtle,
             letterSpacing = 1.sp
         )
         Text(
@@ -78,8 +78,8 @@ fun OwnerSettingsScreen(
                     modifier = Modifier
                         .weight(1f)
                         .clip(RoundedCornerShape(12.dp))
-                        .background(if (isSelected) ByceNeonGreen.copy(alpha = 0.25f) else Color(0x15FFFFFF))
-                        .border(1.dp, if (isSelected) ByceNeonGreen else Color.Transparent, RoundedCornerShape(12.dp))
+                        .background(if (isSelected) Color(0x35FFFFFF) else Color(0x15FFFFFF))
+                        .border(1.dp, if (isSelected) GlassBorderSpecular else Color.Transparent, RoundedCornerShape(12.dp))
                         .clickable { selectedSection = sec }
                         .padding(vertical = 8.dp),
                     contentAlignment = Alignment.Center
@@ -88,7 +88,7 @@ fun OwnerSettingsScreen(
                         text = sec,
                         fontSize = 11.sp,
                         fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
-                        color = if (isSelected) ByceNeonGreen else TextMuted
+                        color = if (isSelected) TextWhite else TextMuted
                     )
                 }
             }
@@ -112,15 +112,15 @@ fun OwnerSettingsScreen(
                                 modifier = Modifier
                                     .size(54.dp)
                                     .clip(CircleShape)
-                                    .background(ByceNeonGreen.copy(alpha = 0.25f))
-                                    .border(1.dp, ByceNeonGreen, CircleShape),
+                                    .background(Color(0x28FFFFFF))
+                                    .border(1.dp, GlassBorderSpecular, CircleShape),
                                 contentAlignment = Alignment.Center
                             ) {
                                 Text(
                                     text = "KK",
                                     fontSize = 18.sp,
                                     fontWeight = FontWeight.Bold,
-                                    color = ByceNeonGreen
+                                    color = TextWhite
                                 )
                             }
                             Spacer(modifier = Modifier.width(14.dp))
@@ -204,7 +204,7 @@ fun OwnerSettingsScreen(
                             text = "SECURITY CREDENTIALS",
                             fontSize = 11.sp,
                             fontWeight = FontWeight.Bold,
-                            color = ByceNeonGreen,
+                            color = TextSubtle,
                             letterSpacing = 0.5.sp
                         )
                         Spacer(modifier = Modifier.height(6.dp))
@@ -227,7 +227,7 @@ fun OwnerSettingsScreen(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Row(verticalAlignment = Alignment.CenterVertically) {
-                                Icon(Icons.Default.Lock, contentDescription = null, tint = ByceNeonGreen, modifier = Modifier.size(20.dp))
+                                Icon(Icons.Default.Lock, contentDescription = null, tint = TextWhite, modifier = Modifier.size(20.dp))
                                 Spacer(modifier = Modifier.width(12.dp))
                                 Column {
                                     Text(text = "Change Password", fontSize = 14.sp, fontWeight = FontWeight.SemiBold, color = TextWhite)
@@ -249,7 +249,7 @@ fun OwnerSettingsScreen(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Row(verticalAlignment = Alignment.CenterVertically) {
-                                Icon(Icons.Default.Security, contentDescription = null, tint = ByceNeonGreen, modifier = Modifier.size(20.dp))
+                                Icon(Icons.Default.Security, contentDescription = null, tint = TextWhite, modifier = Modifier.size(20.dp))
                                 Spacer(modifier = Modifier.width(12.dp))
                                 Column {
                                     Text(text = "Two-Factor Authentication", fontSize = 14.sp, fontWeight = FontWeight.SemiBold, color = TextWhite)
@@ -275,7 +275,7 @@ fun OwnerSettingsScreen(
                             text = "COMMUNICATION CHANNELS",
                             fontSize = 11.sp,
                             fontWeight = FontWeight.Bold,
-                            color = ByceNeonGreen,
+                            color = TextSubtle,
                             letterSpacing = 0.5.sp
                         )
                         Spacer(modifier = Modifier.height(14.dp))
@@ -304,7 +304,7 @@ fun OwnerSettingsScreen(
                             text = "GYM OPERATIONAL RULES",
                             fontSize = 11.sp,
                             fontWeight = FontWeight.Bold,
-                            color = ByceNeonGreen,
+                            color = TextSubtle,
                             letterSpacing = 0.5.sp
                         )
                         Spacer(modifier = Modifier.height(14.dp))
@@ -376,7 +376,7 @@ private fun TogglePreferenceRow(
             onCheckedChange = { onToggle() },
             colors = SwitchDefaults.colors(
                 checkedThumbColor = DarkNavy,
-                checkedTrackColor = ByceNeonGreen,
+                checkedTrackColor = StatusActiveGreen,
                 uncheckedThumbColor = TextMuted,
                 uncheckedTrackColor = Color(0x30FFFFFF)
             )

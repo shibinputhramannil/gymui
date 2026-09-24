@@ -82,7 +82,7 @@ fun OwnerDashboardScreen(
                             text = "WELCOME BACK",
                             fontSize = 11.sp,
                             fontWeight = FontWeight.ExtraBold,
-                            color = ByceNeonGreen,
+                            color = TextSubtle,
                             letterSpacing = 1.sp
                         )
                         Spacer(modifier = Modifier.height(2.dp))
@@ -238,8 +238,8 @@ fun OwnerDashboardScreen(
                             modifier = Modifier
                                 .weight(1f)
                                 .clip(RoundedCornerShape(12.dp))
-                                .background(if (isSelected) ByceNeonGreen.copy(alpha = 0.25f) else Color(0x15FFFFFF))
-                                .border(1.dp, if (isSelected) ByceNeonGreen else Color.Transparent, RoundedCornerShape(12.dp))
+                                .background(if (isSelected) Color(0x35FFFFFF) else Color(0x12FFFFFF))
+                                .border(1.dp, if (isSelected) GlassBorderSpecular else Color.Transparent, RoundedCornerShape(12.dp))
                                 .clickable { selectedRevenueFilter = tab }
                                 .padding(vertical = 8.dp),
                             contentAlignment = Alignment.Center
@@ -248,7 +248,7 @@ fun OwnerDashboardScreen(
                                 text = tab,
                                 fontSize = 11.sp,
                                 fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
-                                color = if (isSelected) ByceNeonGreen else TextMuted
+                                color = if (isSelected) TextWhite else TextMuted
                             )
                         }
                     }
@@ -276,7 +276,7 @@ fun OwnerDashboardScreen(
                             Text(
                                 text = "₹${(point.amount / 1000).toInt()}k",
                                 fontSize = 10.sp,
-                                color = ByceNeonGreen,
+                                color = TextWhite,
                                 fontWeight = FontWeight.Bold
                             )
                             Spacer(modifier = Modifier.height(4.dp))
@@ -287,7 +287,7 @@ fun OwnerDashboardScreen(
                                     .clip(RoundedCornerShape(topStart = 6.dp, topEnd = 6.dp))
                                     .background(
                                         Brush.verticalGradient(
-                                            colors = listOf(ByceNeonGreen, ByceDeepGreen)
+                                            colors = listOf(Color(0x99FFFFFF), Color(0x30FFFFFF))
                                         )
                                     )
                             )
@@ -383,14 +383,14 @@ fun OwnerDashboardScreen(
                         modifier = Modifier
                             .size(38.dp)
                             .clip(CircleShape)
-                            .background(ByceNeonGreen.copy(alpha = 0.20f)),
+                            .background(Color(0x22FFFFFF)),
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
                             text = customer.avatarInitials,
                             fontSize = 12.sp,
                             fontWeight = FontWeight.Bold,
-                            color = ByceNeonGreen
+                            color = TextWhite
                         )
                     }
 
@@ -450,7 +450,7 @@ fun OwnerDashboardScreen(
                         Icon(
                             imageVector = Icons.Default.CurrencyRupee,
                             contentDescription = "Payment",
-                            tint = ByceNeonGreen,
+                            tint = TextWhite,
                             modifier = Modifier.size(16.dp)
                         )
                     }
@@ -520,7 +520,7 @@ fun OwnerDashboardScreen(
                         Icon(
                             imageVector = Icons.Default.AccessTime,
                             contentDescription = "Time",
-                            tint = ByceNeonGreen,
+                            tint = TextWhite,
                             modifier = Modifier.size(16.dp)
                         )
                     }

@@ -58,7 +58,7 @@ fun OwnerMembershipsScreen(
                     text = "MEMBERSHIP PASSES",
                     fontSize = 11.sp,
                     fontWeight = FontWeight.ExtraBold,
-                    color = ByceNeonGreen,
+                    color = TextSubtle,
                     letterSpacing = 1.sp
                 )
                 Text(
@@ -202,7 +202,7 @@ private fun MembershipRowCard(
                         text = "Amount: ₹${item.amount.toInt()}",
                         fontSize = 12.sp,
                         fontWeight = FontWeight.SemiBold,
-                        color = ByceNeonGreen
+                        color = TextWhite
                     )
                 }
 
@@ -217,7 +217,7 @@ private fun MembershipRowCard(
                         text = "Details",
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
-                        color = ByceNeonGreen
+                        color = TextWhite
                     )
                 }
             }

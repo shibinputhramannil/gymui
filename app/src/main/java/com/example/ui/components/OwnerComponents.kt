@@ -103,22 +103,13 @@ fun OwnerHeader(
                     Spacer(modifier = Modifier.width(10.dp))
 
                     Column {
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            Text(
-                                text = "GYM OWNER",
-                                fontSize = 10.sp,
-                                fontWeight = FontWeight.ExtraBold,
-                                color = TextSubtle,
-                                letterSpacing = 1.sp
-                            )
-                            Spacer(modifier = Modifier.width(6.dp))
-                            Box(
-                                modifier = Modifier
-                                    .size(5.dp)
-                                    .clip(CircleShape)
-                                    .background(NeonGreen)
-                            )
-                        }
+                        Text(
+                            text = "GYM OWNER",
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.ExtraBold,
+                            color = TextSubtle,
+                            letterSpacing = 1.sp
+                        )
                         Text(
                             text = gymName,
                             fontSize = 14.sp,
@@ -151,21 +142,21 @@ fun OwnerHeader(
                                     .size(8.dp)
                                     .align(Alignment.TopEnd)
                                     .offset(x = (-6).dp, y = 6.dp)
-                                    .background(ByceNeonGreen, CircleShape)
+                                    .background(StatusActiveGreen, CircleShape)
                             )
                         }
                     }
 
                     Spacer(modifier = Modifier.width(10.dp))
 
-                    // Owner Avatar
+                    // Owner Avatar (Clean frosted glass with white text)
                     Box(
                         modifier = Modifier
                             .size(38.dp)
                             .clip(CircleShape)
                             .background(
                                 Brush.verticalGradient(
-                                    colors = listOf(ByceNeonGreen, ByceDeepGreen)
+                                    colors = listOf(Color(0x35FFFFFF), Color(0x18FFFFFF))
                                 )
                             )
                             .border(1.dp, GlassBorderSpecular, CircleShape)
@@ -176,7 +167,7 @@ fun OwnerHeader(
                             text = ownerInitials,
                             fontSize = 13.sp,
                             fontWeight = FontWeight.Bold,
-                            color = DarkNavy
+                            color = TextWhite
                         )
                     }
                 }
@@ -194,7 +185,7 @@ fun OwnerHeader(
                     Icon(
                         imageVector = Icons.Default.LocationOn,
                         contentDescription = "Location",
-                        tint = ByceNeonGreen,
+                        tint = TextSubtle,
                         modifier = Modifier.size(14.dp)
                     )
                     Spacer(modifier = Modifier.width(4.dp))
@@ -210,7 +201,7 @@ fun OwnerHeader(
                     Box(
                         modifier = Modifier
                             .size(6.dp)
-                            .background(ByceNeonGreen, CircleShape)
+                            .background(StatusActiveGreen, CircleShape)
                     )
                     Spacer(modifier = Modifier.width(6.dp))
                     Text(
@@ -290,7 +281,7 @@ fun OwnerKpiCard(
                 Icon(
                     imageVector = if (isPositiveTrend) Icons.AutoMirrored.Filled.TrendingUp else Icons.Default.TrendingDown,
                     contentDescription = "Trend",
-                    tint = if (isPositiveTrend) ByceNeonGreen else StatusExpiredRed,
+                    tint = if (isPositiveTrend) StatusActiveGreen else StatusExpiredRed,
                     modifier = Modifier.size(13.dp)
                 )
                 Spacer(modifier = Modifier.width(4.dp))
@@ -298,7 +289,7 @@ fun OwnerKpiCard(
                     text = changeText,
                     fontSize = 11.sp,
                     fontWeight = FontWeight.Medium,
-                    color = if (isPositiveTrend) ByceNeonGreen else StatusExpiredRed
+                    color = if (isPositiveTrend) StatusActiveGreen else StatusExpiredRed
                 )
             }
         }
@@ -431,10 +422,10 @@ fun OwnerSearchBar(
                     Box(
                         modifier = Modifier
                             .clip(RoundedCornerShape(16.dp))
-                            .background(if (isSelected) ByceNeonGreen.copy(alpha = 0.2f) else Color(0x15FFFFFF))
+                            .background(if (isSelected) Color(0x35FFFFFF) else Color(0x12FFFFFF))
                             .border(
                                 1.dp,
-                                if (isSelected) ByceNeonGreen else GlassBorderLight,
+                                if (isSelected) GlassBorderSpecular else GlassBorderLight,
                                 RoundedCornerShape(16.dp)
                             )
                             .clickable { onFilterSelected(option) }
@@ -444,7 +435,7 @@ fun OwnerSearchBar(
                             text = option,
                             fontSize = 12.sp,
                             fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
-                            color = if (isSelected) ByceNeonGreen else TextMuted
+                            color = if (isSelected) TextWhite else TextMuted
                         )
                     }
                 }
@@ -481,7 +472,7 @@ fun OwnerSectionHeader(
                 text = actionLabel,
                 fontSize = 12.sp,
                 fontWeight = FontWeight.SemiBold,
-                color = ByceNeonGreen,
+                color = TextWhite,
                 modifier = Modifier.clickable { onActionClick() }
             )
         }
@@ -501,7 +492,7 @@ fun OwnerLoadingState(modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center
     ) {
         CircularProgressIndicator(
-            color = ByceNeonGreen,
+            color = TextWhite,
             modifier = Modifier.size(36.dp),
             strokeWidth = 3.dp
         )
@@ -604,7 +595,8 @@ fun OwnerErrorState(
             Box(
                 modifier = Modifier
                     .clip(RoundedCornerShape(18.dp))
-                    .background(ByceNeonGreen)
+                    .background(Color(0x35FFFFFF))
+                    .border(1.dp, GlassBorderSpecular, RoundedCornerShape(18.dp))
                     .clickable { onRetry() }
                     .padding(horizontal = 20.dp, vertical = 8.dp)
             ) {
@@ -612,7 +604,7 @@ fun OwnerErrorState(
                     text = "Retry",
                     fontSize = 13.sp,
                     fontWeight = FontWeight.Bold,
-                    color = DarkNavy
+                    color = TextWhite
                 )
             }
         }
@@ -688,7 +680,7 @@ fun OwnerNavigationDrawerSheet(
                 text = "GYM OWNER DASHBOARD",
                 fontSize = 11.sp,
                 fontWeight = FontWeight.ExtraBold,
-                color = ByceNeonGreen,
+                color = TextSubtle,
                 letterSpacing = 1.sp
             )
 
@@ -723,7 +715,7 @@ fun OwnerNavigationDrawerSheet(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(12.dp))
-                            .background(if (isSelected) ByceNeonGreen.copy(alpha = 0.20f) else Color.Transparent)
+                            .background(if (isSelected) Color(0x28FFFFFF) else Color.Transparent)
                             .clickable {
                                 onNavigate(item.title)
                                 onClose()
@@ -734,7 +726,7 @@ fun OwnerNavigationDrawerSheet(
                         Icon(
                             imageVector = item.icon,
                             contentDescription = item.title,
-                            tint = if (isSelected) ByceNeonGreen else TextMuted,
+                            tint = if (isSelected) TextWhite else TextMuted,
                             modifier = Modifier.size(19.dp)
                         )
                         Spacer(modifier = Modifier.width(12.dp))
@@ -749,7 +741,7 @@ fun OwnerNavigationDrawerSheet(
                             Box(
                                 modifier = Modifier
                                     .clip(RoundedCornerShape(10.dp))
-                                    .background(ByceNeonGreen)
+                                    .background(StatusActiveGreen)
                                     .padding(horizontal = 6.dp, vertical = 2.dp)
                             ) {
                                 Text(

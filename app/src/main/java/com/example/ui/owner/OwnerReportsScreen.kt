@@ -43,7 +43,7 @@ fun OwnerReportsScreen(
             text = "ANALYTICS & INSIGHTS",
             fontSize = 11.sp,
             fontWeight = FontWeight.ExtraBold,
-            color = ByceNeonGreen,
+            color = TextSubtle,
             letterSpacing = 1.sp
         )
         Text(
@@ -66,8 +66,8 @@ fun OwnerReportsScreen(
                     modifier = Modifier
                         .weight(1f)
                         .clip(RoundedCornerShape(12.dp))
-                        .background(if (isSelected) ByceNeonGreen.copy(alpha = 0.25f) else Color(0x15FFFFFF))
-                        .border(1.dp, if (isSelected) ByceNeonGreen else Color.Transparent, RoundedCornerShape(12.dp))
+                        .background(if (isSelected) Color(0x35FFFFFF) else Color(0x15FFFFFF))
+                        .border(1.dp, if (isSelected) GlassBorderSpecular else Color.Transparent, RoundedCornerShape(12.dp))
                         .clickable { selectedTimeframe = tf }
                         .padding(vertical = 8.dp),
                     contentAlignment = Alignment.Center
@@ -76,7 +76,7 @@ fun OwnerReportsScreen(
                         text = tf,
                         fontSize = 11.sp,
                         fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
-                        color = if (isSelected) ByceNeonGreen else TextMuted
+                        color = if (isSelected) TextWhite else TextMuted
                     )
                 }
             }
@@ -95,8 +95,8 @@ fun OwnerReportsScreen(
                     modifier = Modifier
                         .weight(1f)
                         .clip(RoundedCornerShape(14.dp))
-                        .background(if (isSelected) ByceNeonGreen.copy(alpha = 0.25f) else Color(0x15FFFFFF))
-                        .border(1.dp, if (isSelected) ByceNeonGreen else GlassBorderLight, RoundedCornerShape(14.dp))
+                        .background(if (isSelected) Color(0x35FFFFFF) else Color(0x15FFFFFF))
+                        .border(1.dp, if (isSelected) GlassBorderSpecular else GlassBorderLight, RoundedCornerShape(14.dp))
                         .clickable { selectedReportSection = sec }
                         .padding(vertical = 10.dp),
                     contentAlignment = Alignment.Center
@@ -105,7 +105,7 @@ fun OwnerReportsScreen(
                         text = sec,
                         fontSize = 12.sp,
                         fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
-                        color = if (isSelected) ByceNeonGreen else TextMuted
+                        color = if (isSelected) TextWhite else TextMuted
                     )
                 }
             }
@@ -175,7 +175,7 @@ fun OwnerReportsScreen(
                     text = "EXECUTIVE SUMMARY",
                     fontSize = 11.sp,
                     fontWeight = FontWeight.Bold,
-                    color = ByceNeonGreen,
+                    color = TextSubtle,
                     letterSpacing = 0.5.sp
                 )
                 Spacer(modifier = Modifier.height(10.dp))
@@ -223,7 +223,7 @@ private fun AnalyticsChartCard(
                         .background(StatusActiveGreenBg)
                         .padding(horizontal = 8.dp, vertical = 4.dp)
                 ) {
-                    Text(text = growthText, fontSize = 11.sp, fontWeight = FontWeight.Bold, color = ByceNeonGreen)
+                    Text(text = growthText, fontSize = 11.sp, fontWeight = FontWeight.Bold, color = StatusActiveGreen)
                 }
             }
 
@@ -248,7 +248,7 @@ private fun AnalyticsChartCard(
                             text = "${point.second.toInt()}$unit",
                             fontSize = 10.sp,
                             fontWeight = FontWeight.Bold,
-                            color = ByceNeonGreen
+                            color = TextWhite
                         )
                         Spacer(modifier = Modifier.height(4.dp))
                         Box(
@@ -258,7 +258,7 @@ private fun AnalyticsChartCard(
                                 .clip(RoundedCornerShape(topStart = 6.dp, topEnd = 6.dp))
                                 .background(
                                     Brush.verticalGradient(
-                                        colors = listOf(ByceNeonGreen, ByceDeepGreen)
+                                        colors = listOf(Color(0x99FFFFFF), Color(0x30FFFFFF))
                                     )
                                 )
                         )

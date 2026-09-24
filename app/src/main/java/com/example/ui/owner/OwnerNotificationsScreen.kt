@@ -55,7 +55,7 @@ fun OwnerNotificationsScreen(
                         text = "ALERTS & ACTIVITY",
                         fontSize = 11.sp,
                         fontWeight = FontWeight.ExtraBold,
-                        color = ByceNeonGreen,
+                        color = TextSubtle,
                         letterSpacing = 1.sp
                     )
                     Text(
@@ -82,7 +82,7 @@ fun OwnerNotificationsScreen(
                         text = "Mark all read",
                         fontSize = 11.sp,
                         fontWeight = FontWeight.SemiBold,
-                        color = ByceNeonGreen
+                        color = TextWhite
                     )
                 }
             }
@@ -100,8 +100,8 @@ fun OwnerNotificationsScreen(
                         modifier = Modifier
                             .weight(1f)
                             .clip(RoundedCornerShape(12.dp))
-                            .background(if (isSelected) ByceNeonGreen.copy(alpha = 0.25f) else Color(0x15FFFFFF))
-                            .border(1.dp, if (isSelected) ByceNeonGreen else Color.Transparent, RoundedCornerShape(12.dp))
+                            .background(if (isSelected) Color(0x35FFFFFF) else Color(0x15FFFFFF))
+                            .border(1.dp, if (isSelected) GlassBorderSpecular else Color.Transparent, RoundedCornerShape(12.dp))
                             .clickable { selectedTypeFilter = type }
                             .padding(vertical = 8.dp),
                         contentAlignment = Alignment.Center
@@ -110,7 +110,7 @@ fun OwnerNotificationsScreen(
                             text = type,
                             fontSize = 11.sp,
                             fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
-                            color = if (isSelected) ByceNeonGreen else TextMuted
+                            color = if (isSelected) TextWhite else TextMuted
                         )
                     }
                 }
@@ -175,13 +175,13 @@ private fun NotificationRowCard(
                 modifier = Modifier
                     .size(36.dp)
                     .clip(CircleShape)
-                    .background(if (!item.isRead) ByceNeonGreen.copy(alpha = 0.25f) else Color(0x18FFFFFF)),
+                    .background(Color(0x22FFFFFF)),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
                     imageVector = icon,
                     contentDescription = null,
-                    tint = if (!item.isRead) ByceNeonGreen else TextMuted,
+                    tint = TextWhite,
                     modifier = Modifier.size(18.dp)
                 )
             }
@@ -204,7 +204,7 @@ private fun NotificationRowCard(
                         Box(
                             modifier = Modifier
                                 .size(7.dp)
-                                .background(ByceNeonGreen, CircleShape)
+                                .background(StatusActiveGreen, CircleShape)
                         )
                     }
                 }

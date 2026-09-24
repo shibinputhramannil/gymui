@@ -52,7 +52,7 @@ fun OwnerStaffScreen(
                             text = "PERSONNEL & ACCESS",
                             fontSize = 11.sp,
                             fontWeight = FontWeight.ExtraBold,
-                            color = ByceNeonGreen,
+                            color = TextSubtle,
                             letterSpacing = 1.sp
                         )
                         Text(
@@ -145,13 +145,13 @@ private fun StaffRowCard(
                     modifier = Modifier
                         .size(42.dp)
                         .clip(CircleShape)
-                        .background(ByceNeonGreen.copy(alpha = 0.20f)),
+                        .background(Color(0x20FFFFFF)),
                     contentAlignment = Alignment.Center
                 ) {
                     Icon(
                         imageVector = if (staff.role == "Gym Admin") Icons.Default.AdminPanelSettings else Icons.Default.Badge,
                         contentDescription = null,
-                        tint = ByceNeonGreen,
+                        tint = TextWhite,
                         modifier = Modifier.size(20.dp)
                     )
                 }
@@ -215,7 +215,7 @@ private fun StaffRowCard(
                     modifier = Modifier
                         .clip(RoundedCornerShape(12.dp))
                         .background(if (staff.status == "Active") StatusExpiredRedBg else StatusActiveGreenBg)
-                        .border(1.dp, if (staff.status == "Active") StatusExpiredRed.copy(alpha = 0.5f) else ByceNeonGreen.copy(alpha = 0.5f), RoundedCornerShape(12.dp))
+                        .border(1.dp, if (staff.status == "Active") StatusExpiredRed.copy(alpha = 0.5f) else StatusActiveGreen.copy(alpha = 0.5f), RoundedCornerShape(12.dp))
                         .clickable { onToggleStatus() }
                         .padding(horizontal = 12.dp, vertical = 6.dp)
                 ) {
@@ -223,7 +223,7 @@ private fun StaffRowCard(
                         text = if (staff.status == "Active") "Deactivate" else "Activate",
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
-                        color = if (staff.status == "Active") StatusExpiredRed else ByceNeonGreen
+                        color = if (staff.status == "Active") StatusExpiredRed else StatusActiveGreen
                     )
                 }
             }
@@ -279,7 +279,8 @@ private fun AddStaffDialog(
                             modifier = Modifier
                                 .weight(1f)
                                 .clip(RoundedCornerShape(12.dp))
-                                .background(if (isSelected) ByceNeonGreen else Color(0x18FFFFFF))
+                                .background(if (isSelected) Color(0x35FFFFFF) else Color(0x18FFFFFF))
+                                .border(1.dp, if (isSelected) GlassBorderSpecular else Color.Transparent, RoundedCornerShape(12.dp))
                                 .clickable { role = r }
                                 .padding(vertical = 10.dp),
                             contentAlignment = Alignment.Center
@@ -288,7 +289,7 @@ private fun AddStaffDialog(
                                 text = r,
                                 fontSize = 12.sp,
                                 fontWeight = FontWeight.Bold,
-                                color = if (isSelected) DarkNavy else TextWhite
+                                color = TextWhite
                             )
                         }
                     }

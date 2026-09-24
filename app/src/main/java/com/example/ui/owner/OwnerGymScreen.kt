@@ -57,7 +57,7 @@ fun OwnerGymScreen(
                     text = "FACILITY & GEO-LOCATION",
                     fontSize = 11.sp,
                     fontWeight = FontWeight.ExtraBold,
-                    color = ByceNeonGreen,
+                    color = TextSubtle,
                     letterSpacing = 1.sp
                 )
                 Text(
@@ -76,9 +76,9 @@ fun OwnerGymScreen(
                     .padding(horizontal = 14.dp, vertical = 8.dp)
             ) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(Icons.Default.Edit, contentDescription = "Edit", tint = ByceNeonGreen, modifier = Modifier.size(15.dp))
+                    Icon(Icons.Default.Edit, contentDescription = "Edit", tint = TextWhite, modifier = Modifier.size(15.dp))
                     Spacer(modifier = Modifier.width(4.dp))
-                    Text(text = "Edit Gym", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = ByceNeonGreen)
+                    Text(text = "Edit Gym", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = TextWhite)
                 }
             }
         }
@@ -96,8 +96,8 @@ fun OwnerGymScreen(
                     modifier = Modifier
                         .weight(1f)
                         .clip(RoundedCornerShape(14.dp))
-                        .background(if (isSelected) ByceNeonGreen.copy(alpha = 0.25f) else Color(0x15FFFFFF))
-                        .border(1.dp, if (isSelected) ByceNeonGreen else Color.Transparent, RoundedCornerShape(14.dp))
+                        .background(if (isSelected) Color(0x35FFFFFF) else Color(0x15FFFFFF))
+                        .border(1.dp, if (isSelected) GlassBorderSpecular else Color.Transparent, RoundedCornerShape(14.dp))
                         .clickable { activeSubTab = tab }
                         .padding(vertical = 10.dp),
                     contentAlignment = Alignment.Center
@@ -106,7 +106,7 @@ fun OwnerGymScreen(
                         text = tab,
                         fontSize = 13.sp,
                         fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
-                        color = if (isSelected) ByceNeonGreen else TextMuted
+                        color = if (isSelected) TextWhite else TextMuted
                     )
                 }
             }
@@ -158,7 +158,7 @@ fun OwnerGymScreen(
                         text = "OPERATING HOURS",
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
-                        color = ByceNeonGreen,
+                        color = TextSubtle,
                         letterSpacing = 0.5.sp
                     )
                     Spacer(modifier = Modifier.height(6.dp))
@@ -183,7 +183,7 @@ fun OwnerGymScreen(
                         text = "CONTACT DETAILS",
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
-                        color = ByceNeonGreen,
+                        color = TextSubtle,
                         letterSpacing = 0.5.sp
                     )
                     Spacer(modifier = Modifier.height(8.dp))
@@ -199,7 +199,7 @@ fun OwnerGymScreen(
                         text = "ADDRESS & PINCODE",
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
-                        color = ByceNeonGreen,
+                        color = TextSubtle,
                         letterSpacing = 0.5.sp
                     )
                     Spacer(modifier = Modifier.height(6.dp))
@@ -221,7 +221,7 @@ fun OwnerGymScreen(
                         text = "BYCE DISCOVERY GEO-LOCATION",
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
-                        color = ByceNeonGreen,
+                        color = TextSubtle,
                         letterSpacing = 0.5.sp
                     )
                     Spacer(modifier = Modifier.height(4.dp))
@@ -266,14 +266,14 @@ fun OwnerGymScreen(
                                 modifier = Modifier
                                     .size(46.dp)
                                     .clip(CircleShape)
-                                    .background(ByceNeonGreen.copy(alpha = 0.2f))
-                                    .border(1.dp, ByceNeonGreen, CircleShape),
+                                    .background(Color(0x30FFFFFF))
+                                    .border(1.dp, GlassBorderSpecular, CircleShape),
                                 contentAlignment = Alignment.Center
                             ) {
                                 Icon(
                                     imageVector = Icons.Default.LocationOn,
                                     contentDescription = "Pin",
-                                    tint = ByceNeonGreen,
+                                    tint = TextWhite,
                                     modifier = Modifier.size(24.dp)
                                 )
                             }
@@ -324,7 +324,7 @@ fun OwnerGymScreen(
                         text = "Full Address",
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
-                        color = ByceNeonGreen
+                        color = TextSubtle
                     )
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
@@ -360,7 +360,7 @@ private fun ContactRow(icon: androidx.compose.ui.graphics.vector.ImageVector, va
         modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Icon(imageVector = icon, contentDescription = null, tint = ByceNeonGreen, modifier = Modifier.size(16.dp))
+        Icon(imageVector = icon, contentDescription = null, tint = TextWhite, modifier = Modifier.size(16.dp))
         Spacer(modifier = Modifier.width(10.dp))
         Text(text = value, fontSize = 13.sp, color = TextWhite)
     }

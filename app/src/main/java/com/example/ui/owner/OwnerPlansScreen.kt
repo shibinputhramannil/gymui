@@ -55,7 +55,7 @@ fun OwnerPlansScreen(
                             text = "OFFERING TIERS",
                             fontSize = 11.sp,
                             fontWeight = FontWeight.ExtraBold,
-                            color = ByceNeonGreen,
+                            color = TextSubtle,
                             letterSpacing = 1.sp
                         )
                         Text(
@@ -69,11 +69,8 @@ fun OwnerPlansScreen(
                     Box(
                         modifier = Modifier
                             .clip(RoundedCornerShape(18.dp))
-                            .background(
-                                Brush.verticalGradient(
-                                    colors = listOf(Color(0xFF6B9330), Color(0xFF4E7320))
-                                )
-                            )
+                            .background(Color(0x35FFFFFF))
+                            .border(1.dp, GlassBorderSpecular, RoundedCornerShape(18.dp))
                             .clickable { showCreateDialog = true }
                             .padding(horizontal = 14.dp, vertical = 8.dp)
                     ) {
@@ -192,7 +189,7 @@ private fun PlanCard(
                     text = "₹${plan.price.toInt()}",
                     fontSize = 24.sp,
                     fontWeight = FontWeight.ExtraBold,
-                    color = ByceNeonGreen
+                    color = TextWhite
                 )
                 Text(
                     text = " / ${plan.duration} ${plan.durationUnit}",
@@ -223,7 +220,7 @@ private fun PlanCard(
                         Icon(
                             imageVector = Icons.Default.CheckCircle,
                             contentDescription = null,
-                            tint = ByceNeonGreen,
+                            tint = StatusActiveGreen,
                             modifier = Modifier.size(14.dp)
                         )
                         Spacer(modifier = Modifier.width(8.dp))
@@ -256,7 +253,7 @@ private fun PlanCard(
                         .weight(1f)
                         .clip(RoundedCornerShape(12.dp))
                         .background(if (plan.isActive) StatusExpiredRedBg else StatusActiveGreenBg)
-                        .border(1.dp, if (plan.isActive) StatusExpiredRed.copy(alpha = 0.5f) else ByceNeonGreen.copy(alpha = 0.5f), RoundedCornerShape(12.dp))
+                        .border(1.dp, if (plan.isActive) StatusExpiredRed.copy(alpha = 0.5f) else StatusActiveGreen.copy(alpha = 0.5f), RoundedCornerShape(12.dp))
                         .clickable { onToggleActive() }
                         .padding(vertical = 10.dp),
                     contentAlignment = Alignment.Center
@@ -265,7 +262,7 @@ private fun PlanCard(
                         text = if (plan.isActive) "Deactivate" else "Activate",
                         fontSize = 12.sp,
                         fontWeight = FontWeight.Bold,
-                        color = if (plan.isActive) StatusExpiredRed else ByceNeonGreen
+                        color = if (plan.isActive) StatusExpiredRed else StatusActiveGreen
                     )
                 }
             }
@@ -348,11 +345,8 @@ private fun CreatePlanDialog(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(16.dp))
-                        .background(
-                            Brush.verticalGradient(
-                                colors = listOf(Color(0xFF6B9330), Color(0xFF4E7320))
-                            )
-                        )
+                        .background(Color(0x35FFFFFF))
+                        .border(1.dp, GlassBorderSpecular, RoundedCornerShape(16.dp))
                         .clickable {
                             val p = initialPlan ?: MembershipPlanItem(
                                 id = "plan_${System.currentTimeMillis()}",

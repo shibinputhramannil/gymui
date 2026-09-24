@@ -66,7 +66,7 @@ fun OwnerCustomersScreen(
                             text = "CUSTOMERS DIRECTORY",
                             fontSize = 11.sp,
                             fontWeight = FontWeight.ExtraBold,
-                            color = ByceNeonGreen,
+                            color = TextSubtle,
                             letterSpacing = 1.sp
                         )
                         Text(
@@ -194,7 +194,7 @@ private fun CustomerCardItem(
                     modifier = Modifier
                         .size(42.dp)
                         .clip(CircleShape)
-                        .background(ByceNeonGreen.copy(alpha = 0.20f))
+                        .background(Color(0x22FFFFFF))
                         .border(1.dp, GlassBorderLight, CircleShape),
                     contentAlignment = Alignment.Center
                 ) {
@@ -202,7 +202,7 @@ private fun CustomerCardItem(
                         text = customer.avatarInitials,
                         fontSize = 14.sp,
                         fontWeight = FontWeight.Bold,
-                        color = ByceNeonGreen
+                        color = TextWhite
                     )
                 }
 
@@ -280,7 +280,7 @@ private fun CustomerCardItem(
                             text = "View",
                             fontSize = 11.sp,
                             fontWeight = FontWeight.Bold,
-                            color = ByceNeonGreen
+                            color = TextWhite
                         )
                     }
 
@@ -344,14 +344,14 @@ private fun CustomerDetailDialog(
                         modifier = Modifier
                             .size(50.dp)
                             .clip(CircleShape)
-                            .background(ByceNeonGreen.copy(alpha = 0.25f)),
+                            .background(Color(0x28FFFFFF)),
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
                             text = customer.avatarInitials,
                             fontSize = 16.sp,
                             fontWeight = FontWeight.Bold,
-                            color = ByceNeonGreen
+                            color = TextWhite
                         )
                     }
                     Spacer(modifier = Modifier.width(14.dp))
@@ -375,7 +375,7 @@ private fun CustomerDetailDialog(
                     text = "MEMBERSHIP DETAILS",
                     fontSize = 11.sp,
                     fontWeight = FontWeight.Bold,
-                    color = ByceNeonGreen,
+                    color = TextSubtle,
                     letterSpacing = 0.5.sp
                 )
                 Spacer(modifier = Modifier.height(6.dp))
@@ -420,7 +420,7 @@ private fun CustomerDetailDialog(
                     text = "RECENT BOOKINGS & ACTIVITY",
                     fontSize = 11.sp,
                     fontWeight = FontWeight.Bold,
-                    color = ByceNeonGreen,
+                    color = TextSubtle,
                     letterSpacing = 0.5.sp
                 )
                 Spacer(modifier = Modifier.height(6.dp))

@@ -43,6 +43,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.SpanStyle
+import com.example.ui.theme.GlassBorderSpecular
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -192,15 +193,16 @@ fun AuthScreen(
                         Spacer(modifier = Modifier.height(8.dp))
                         Box(
                             modifier = Modifier
-                                .clip(RoundedCornerShape(8.dp))
-                                .background(com.example.ui.theme.ByceNeonGreen.copy(alpha = 0.20f))
-                                .padding(horizontal = 10.dp, vertical = 3.dp)
+                                 .clip(RoundedCornerShape(8.dp))
+                                 .background(Color(0x28FFFFFF))
+                                 .border(1.dp, GlassBorderSpecular, RoundedCornerShape(8.dp))
+                                 .padding(horizontal = 10.dp, vertical = 3.dp)
                         ) {
                             Text(
                                 text = "GYM OWNER PORTAL",
                                 fontSize = 10.sp,
                                 fontWeight = FontWeight.ExtraBold,
-                                color = com.example.ui.theme.ByceNeonGreen,
+                                color = TextWhite,
                                 letterSpacing = 1.sp
                             )
                         }
