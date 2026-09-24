@@ -16,6 +16,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -77,7 +78,8 @@ fun OwnerSettingsScreen(
                     modifier = Modifier
                         .weight(1f)
                         .clip(RoundedCornerShape(12.dp))
-                        .background(if (isSelected) ByceNeonGreen else Color(0x18FFFFFF))
+                        .background(if (isSelected) Color(0x3578A336) else Color(0x15FFFFFF))
+                        .border(1.dp, if (isSelected) ByceNeonGreen else Color.Transparent, RoundedCornerShape(12.dp))
                         .clickable { selectedSection = sec }
                         .padding(vertical = 8.dp),
                     contentAlignment = Alignment.Center
@@ -86,7 +88,7 @@ fun OwnerSettingsScreen(
                         text = sec,
                         fontSize = 11.sp,
                         fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
-                        color = if (isSelected) DarkNavy else TextWhite
+                        color = if (isSelected) ByceNeonGreen else TextMuted
                     )
                 }
             }
@@ -167,7 +169,11 @@ fun OwnerSettingsScreen(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .clip(RoundedCornerShape(16.dp))
-                                .background(ByceNeonGreen)
+                                .background(
+                                    Brush.verticalGradient(
+                                        colors = listOf(Color(0xFF6B9330), Color(0xFF4E7320))
+                                    )
+                                )
                                 .clickable {
                                     GymOwnerRepository.updateOwnerProfile(ownerName, ownerEmail, ownerPhone)
                                 }
@@ -178,7 +184,7 @@ fun OwnerSettingsScreen(
                                 text = "Save Profile",
                                 fontSize = 13.sp,
                                 fontWeight = FontWeight.Bold,
-                                color = DarkNavy
+                                color = TextWhite
                             )
                         }
                     }
@@ -419,12 +425,16 @@ private fun ChangePasswordDialog(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(16.dp))
-                        .background(ByceNeonGreen)
+                        .background(
+                            Brush.verticalGradient(
+                                colors = listOf(Color(0xFF6B9330), Color(0xFF4E7320))
+                            )
+                        )
                         .clickable { onDismiss() }
                         .padding(vertical = 12.dp),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(text = "Update Password", fontSize = 13.sp, fontWeight = FontWeight.Bold, color = DarkNavy)
+                    Text(text = "Update Password", fontSize = 13.sp, fontWeight = FontWeight.Bold, color = TextWhite)
                 }
             }
         }

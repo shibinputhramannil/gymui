@@ -96,7 +96,8 @@ fun OwnerGymScreen(
                     modifier = Modifier
                         .weight(1f)
                         .clip(RoundedCornerShape(14.dp))
-                        .background(if (isSelected) ByceNeonGreen else Color(0x18FFFFFF))
+                        .background(if (isSelected) Color(0x3578A336) else Color(0x15FFFFFF))
+                        .border(1.dp, if (isSelected) ByceNeonGreen else Color.Transparent, RoundedCornerShape(14.dp))
                         .clickable { activeSubTab = tab }
                         .padding(vertical = 10.dp),
                     contentAlignment = Alignment.Center
@@ -105,7 +106,7 @@ fun OwnerGymScreen(
                         text = tab,
                         fontSize = 13.sp,
                         fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
-                        color = if (isSelected) DarkNavy else TextWhite
+                        color = if (isSelected) ByceNeonGreen else TextMuted
                     )
                 }
             }
@@ -438,7 +439,11 @@ private fun EditGymDialog(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(16.dp))
-                        .background(ByceNeonGreen)
+                        .background(
+                            Brush.verticalGradient(
+                                colors = listOf(Color(0xFF6B9330), Color(0xFF4E7320))
+                            )
+                        )
                         .clickable {
                             onSave(
                                 current.copy(
@@ -459,7 +464,7 @@ private fun EditGymDialog(
                         .padding(vertical = 12.dp),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(text = "Save Changes", fontSize = 13.sp, fontWeight = FontWeight.Bold, color = DarkNavy)
+                    Text(text = "Save Changes", fontSize = 13.sp, fontWeight = FontWeight.Bold, color = TextWhite)
                 }
             }
         }

@@ -4,6 +4,8 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -16,6 +18,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -66,14 +69,18 @@ fun OwnerPlansScreen(
                     Box(
                         modifier = Modifier
                             .clip(RoundedCornerShape(18.dp))
-                            .background(ByceNeonGreen)
+                            .background(
+                                Brush.verticalGradient(
+                                    colors = listOf(Color(0xFF6B9330), Color(0xFF4E7320))
+                                )
+                            )
                             .clickable { showCreateDialog = true }
                             .padding(horizontal = 14.dp, vertical = 8.dp)
                     ) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
-                            Icon(Icons.Default.Add, contentDescription = "Add", tint = DarkNavy, modifier = Modifier.size(16.dp))
+                            Icon(Icons.Default.Add, contentDescription = "Add", tint = TextWhite, modifier = Modifier.size(16.dp))
                             Spacer(modifier = Modifier.width(4.dp))
-                            Text(text = "Create Plan", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = DarkNavy)
+                            Text(text = "Create Plan", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = TextWhite)
                         }
                     }
                 }
@@ -341,7 +348,11 @@ private fun CreatePlanDialog(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(16.dp))
-                        .background(ByceNeonGreen)
+                        .background(
+                            Brush.verticalGradient(
+                                colors = listOf(Color(0xFF6B9330), Color(0xFF4E7320))
+                            )
+                        )
                         .clickable {
                             val p = initialPlan ?: MembershipPlanItem(
                                 id = "plan_${System.currentTimeMillis()}",
@@ -367,7 +378,7 @@ private fun CreatePlanDialog(
                         .padding(vertical = 12.dp),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(text = "Save Plan", fontSize = 13.sp, fontWeight = FontWeight.Bold, color = DarkNavy)
+                    Text(text = "Save Plan", fontSize = 13.sp, fontWeight = FontWeight.Bold, color = TextWhite)
                 }
             }
         }

@@ -16,6 +16,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -65,14 +66,18 @@ fun OwnerStaffScreen(
                     Box(
                         modifier = Modifier
                             .clip(RoundedCornerShape(18.dp))
-                            .background(ByceNeonGreen)
+                            .background(
+                                Brush.verticalGradient(
+                                    colors = listOf(Color(0xFF6B9330), Color(0xFF4E7320))
+                                )
+                            )
                             .clickable { showAddDialog = true }
                             .padding(horizontal = 14.dp, vertical = 8.dp)
                     ) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
-                            Icon(Icons.Default.PersonAdd, contentDescription = null, tint = DarkNavy, modifier = Modifier.size(16.dp))
+                            Icon(Icons.Default.PersonAdd, contentDescription = null, tint = TextWhite, modifier = Modifier.size(16.dp))
                             Spacer(modifier = Modifier.width(4.dp))
-                            Text(text = "Add Staff", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = DarkNavy)
+                            Text(text = "Add Staff", fontSize = 12.sp, fontWeight = FontWeight.Bold, color = TextWhite)
                         }
                     }
                 }
@@ -295,7 +300,11 @@ private fun AddStaffDialog(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(16.dp))
-                        .background(ByceNeonGreen)
+                        .background(
+                            Brush.verticalGradient(
+                                colors = listOf(Color(0xFF6B9330), Color(0xFF4E7320))
+                            )
+                        )
                         .clickable {
                             if (name.isNotBlank()) {
                                 onAdd(
@@ -314,7 +323,7 @@ private fun AddStaffDialog(
                         .padding(vertical = 12.dp),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(text = "Add Member", fontSize = 13.sp, fontWeight = FontWeight.Bold, color = DarkNavy)
+                    Text(text = "Add Member", fontSize = 13.sp, fontWeight = FontWeight.Bold, color = TextWhite)
                 }
             }
         }

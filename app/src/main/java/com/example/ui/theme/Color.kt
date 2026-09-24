@@ -12,9 +12,9 @@ val ByceGreen = Color(0xFFE2E8F0) // Main UI accent matching the dark glass them
 val ByceGreenGlow = Color(0x38FFFFFF)
 val ByceGreenHighlight = Color(0x80FFFFFF)
 
-// Vibrant Neon Accent for specific status indicators
-val NeonGreen = Color(0xFFA6CE39)
-val NeonGreenGlow = Color(0x60A6CE39)
+// Vibrant Neon Accent - softened to reduce harsh contrast & glare
+val NeonGreen = Color(0xFF78A336)
+val NeonGreenGlow = Color(0x3078A336)
 
 // Translucent Glass Palette
 val GlassSurfaceLight = Color(0x1FFFFFFF)
@@ -31,23 +31,23 @@ val TextWhite = Color(0xFFFFFFFF)
 val TextMuted = Color(0xCCFFFFFF)
 val TextSubtle = Color(0x88FFFFFF)
 
-// Official BYCE Brand Palette
-val ByceNeonGreen = Color(0xFFA6CE39)
+// Official BYCE Brand Palette (low contrast, refined)
+val ByceNeonGreen = Color(0xFF78A336)
 val ByceDeepGreen = Color(0xFF0B4F30)
-val ByceCoolGray = Color(0xFF777A80)
+val ByceCoolGray = Color(0xFF8A8D93)
 val ByceOffWhite = Color(0xFFF8F5EE)
 val ByceCharcoalBlack = Color(0xFF000000)
 
 // Status Colors for Dashboard and Tables
-val StatusActiveGreen = Color(0xFFA6CE39)
-val StatusActiveGreenBg = Color(0x25A6CE39)
-val StatusPendingAmber = Color(0xFFFFB800)
-val StatusPendingAmberBg = Color(0x25FFB800)
-val StatusExpiredRed = Color(0xFFFF5252)
-val StatusExpiredRedBg = Color(0x25FF5252)
-val StatusCancelledGray = Color(0xFF777A80)
-val StatusCancelledGrayBg = Color(0x25777A80)
+val StatusActiveGreen = Color(0xFF78A336)
+val StatusActiveGreenBg = Color(0x2278A336)
+val StatusPendingAmber = Color(0xFFE5A510)
+val StatusPendingAmberBg = Color(0x20E5A510)
+val StatusExpiredRed = Color(0xFFE05252)
+val StatusExpiredRedBg = Color(0x20E05252)
+val StatusCancelledGray = Color(0xFF8A8D93)
+val StatusCancelledGrayBg = Color(0x208A8D93)
 val StatusInfoBlue = Color(0xFF38BDF8)
-val StatusInfoBlueBg = Color(0x2538BDF8)
+val StatusInfoBlueBg = Color(0x2038BDF8)
 
 

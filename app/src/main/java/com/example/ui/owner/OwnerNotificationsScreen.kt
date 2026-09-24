@@ -100,7 +100,8 @@ fun OwnerNotificationsScreen(
                         modifier = Modifier
                             .weight(1f)
                             .clip(RoundedCornerShape(12.dp))
-                            .background(if (isSelected) ByceNeonGreen else Color(0x18FFFFFF))
+                            .background(if (isSelected) Color(0x3578A336) else Color(0x15FFFFFF))
+                            .border(1.dp, if (isSelected) ByceNeonGreen else Color.Transparent, RoundedCornerShape(12.dp))
                             .clickable { selectedTypeFilter = type }
                             .padding(vertical = 8.dp),
                         contentAlignment = Alignment.Center
@@ -109,7 +110,7 @@ fun OwnerNotificationsScreen(
                             text = type,
                             fontSize = 11.sp,
                             fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
-                            color = if (isSelected) DarkNavy else TextWhite
+                            color = if (isSelected) ByceNeonGreen else TextMuted
                         )
                     }
                 }
