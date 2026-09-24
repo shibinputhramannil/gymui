@@ -31,3 +31,23 @@ val TextWhite = Color(0xFFFFFFFF)
 val TextMuted = Color(0xCCFFFFFF)
 val TextSubtle = Color(0x88FFFFFF)
 
+// Official BYCE Brand Palette
+val ByceNeonGreen = Color(0xFFA6CE39)
+val ByceDeepGreen = Color(0xFF0B4F30)
+val ByceCoolGray = Color(0xFF777A80)
+val ByceOffWhite = Color(0xFFF8F5EE)
+val ByceCharcoalBlack = Color(0xFF000000)
+
+// Status Colors for Dashboard and Tables
+val StatusActiveGreen = Color(0xFFA6CE39)
+val StatusActiveGreenBg = Color(0x25A6CE39)
+val StatusPendingAmber = Color(0xFFFFB800)
+val StatusPendingAmberBg = Color(0x25FFB800)
+val StatusExpiredRed = Color(0xFFFF5252)
+val StatusExpiredRedBg = Color(0x25FF5252)
+val StatusCancelledGray = Color(0xFF777A80)
+val StatusCancelledGrayBg = Color(0x25777A80)
+val StatusInfoBlue = Color(0xFF38BDF8)
+val StatusInfoBlueBg = Color(0x2538BDF8)
+
+

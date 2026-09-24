@@ -79,8 +79,8 @@ fun AuthScreen(
     var authMode by remember { mutableStateOf(AuthMode.LOGIN) }
 
     // Login State
-    var loginPhone by remember { mutableStateOf("") }
-    var loginPassword by remember { mutableStateOf("") }
+    var loginPhone by remember { mutableStateOf("+91 98470 12345") }
+    var loginPassword by remember { mutableStateOf("byce1234") }
     var loginPasswordVisible by remember { mutableStateOf(false) }
     var loginError by remember { mutableStateOf<String?>(null) }
 
@@ -184,6 +184,27 @@ fun AuthScreen(
                             .padding(bottom = 18.dp),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
+                        Image(
+                            painter = painterResource(id = com.example.R.drawable.byce_logo),
+                            contentDescription = "BYCE Logo",
+                            modifier = Modifier.height(30.dp)
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Box(
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(8.dp))
+                                .background(Color(0x28A6CE39))
+                                .padding(horizontal = 10.dp, vertical = 3.dp)
+                        ) {
+                            Text(
+                                text = "GYM OWNER PORTAL",
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = com.example.ui.theme.ByceNeonGreen,
+                                letterSpacing = 1.sp
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(10.dp))
                         Text(
                             text = headlineText,
                             style = androidx.compose.material3.MaterialTheme.typography.headlineLarge,
@@ -203,8 +224,17 @@ fun AuthScreen(
                                 lineHeight = 18.sp,
                                 textAlign = TextAlign.Center
                             )
+                        } else if (authMode == AuthMode.LOGIN) {
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = "Manage Iron House Fitness · Kozhikode",
+                                fontSize = 12.sp,
+                                color = TextMuted,
+                                textAlign = TextAlign.Center
+                            )
                         }
                     }
+
 
             // --------------------------------------------------
             // AUTH SCREEN STATES
