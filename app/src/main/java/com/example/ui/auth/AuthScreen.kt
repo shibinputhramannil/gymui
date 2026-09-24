@@ -193,7 +193,7 @@ fun AuthScreen(
                         Box(
                             modifier = Modifier
                                 .clip(RoundedCornerShape(8.dp))
-                                .background(Color(0x28A6CE39))
+                                .background(com.example.ui.theme.ByceNeonGreen.copy(alpha = 0.20f))
                                 .padding(horizontal = 10.dp, vertical = 3.dp)
                         ) {
                             Text(
@@ -519,7 +519,7 @@ fun AuthScreen(
                                 .size(72.dp)
                                 .clip(CircleShape)
                                 .background(Color(0x20FFFFFF))
-                                .border(1.dp, Color(0x40A6CE39), CircleShape),
+                                .border(1.dp, com.example.ui.theme.NeonGreen.copy(alpha = 0.40f), CircleShape),
                             contentAlignment = Alignment.Center
                         ) {
                             Icon(

@@ -707,7 +707,7 @@ fun OwnerNavigationDrawerSheet(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(12.dp))
-                            .background(if (isSelected) Color(0x28A6CE39) else Color.Transparent)
+                            .background(if (isSelected) ByceNeonGreen.copy(alpha = 0.20f) else Color.Transparent)
                             .clickable {
                                 onNavigate(item.title)
                                 onClose()

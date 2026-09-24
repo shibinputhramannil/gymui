@@ -145,7 +145,7 @@ private fun StaffRowCard(
                     modifier = Modifier
                         .size(42.dp)
                         .clip(CircleShape)
-                        .background(Color(0x28A6CE39)),
+                        .background(ByceNeonGreen.copy(alpha = 0.20f)),
                     contentAlignment = Alignment.Center
                 ) {
                     Icon(

@@ -100,7 +100,7 @@ fun OwnerNotificationsScreen(
                         modifier = Modifier
                             .weight(1f)
                             .clip(RoundedCornerShape(12.dp))
-                            .background(if (isSelected) Color(0x3578A336) else Color(0x15FFFFFF))
+                            .background(if (isSelected) ByceNeonGreen.copy(alpha = 0.25f) else Color(0x15FFFFFF))
                             .border(1.dp, if (isSelected) ByceNeonGreen else Color.Transparent, RoundedCornerShape(12.dp))
                             .clickable { selectedTypeFilter = type }
                             .padding(vertical = 8.dp),
@@ -175,7 +175,7 @@ private fun NotificationRowCard(
                 modifier = Modifier
                     .size(36.dp)
                     .clip(CircleShape)
-                    .background(if (!item.isRead) Color(0x30A6CE39) else Color(0x18FFFFFF)),
+                    .background(if (!item.isRead) ByceNeonGreen.copy(alpha = 0.25f) else Color(0x18FFFFFF)),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(

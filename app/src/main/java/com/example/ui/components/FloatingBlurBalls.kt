@@ -80,14 +80,14 @@ fun FloatingBlurBalls(
         )
 
         // ----------------------------------------------------
-        // 2. ELECTRIC LIME ORB (Fast Mid-Right Orbit)
+        // 2. RADIANT CYAN AQUA ORB (Fast Mid-Right Orbit)
         // ----------------------------------------------------
         val orb2X = width * 0.72f + (cos(rad2) * 135f).toFloat()
         val orb2Y = height * 0.40f + (sin(rad2) * 115f).toFloat()
         drawAuroraOrb(
             center = Offset(orb2X, orb2Y),
             radius = width * 0.78f,
-            color = Color(0x45A6CE39) // Cult.fit Neon Lime Green
+            color = Color(0x4006B6D4) // Cult.fit Radiant Cyan Aqua
         )
 
         // ----------------------------------------------------

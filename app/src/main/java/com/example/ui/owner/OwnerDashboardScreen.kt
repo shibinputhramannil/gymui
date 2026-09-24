@@ -238,7 +238,7 @@ fun OwnerDashboardScreen(
                             modifier = Modifier
                                 .weight(1f)
                                 .clip(RoundedCornerShape(12.dp))
-                                .background(if (isSelected) Color(0x3578A336) else Color(0x15FFFFFF))
+                                .background(if (isSelected) ByceNeonGreen.copy(alpha = 0.25f) else Color(0x15FFFFFF))
                                 .border(1.dp, if (isSelected) ByceNeonGreen else Color.Transparent, RoundedCornerShape(12.dp))
                                 .clickable { selectedRevenueFilter = tab }
                                 .padding(vertical = 8.dp),
@@ -383,7 +383,7 @@ fun OwnerDashboardScreen(
                         modifier = Modifier
                             .size(38.dp)
                             .clip(CircleShape)
-                            .background(Color(0x28A6CE39)),
+                            .background(ByceNeonGreen.copy(alpha = 0.20f)),
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
@@ -574,7 +574,7 @@ private fun QuickActionButton(
                 modifier = Modifier
                     .size(34.dp)
                     .clip(CircleShape)
-                    .background(Color(0x20A6CE39)),
+                    .background(ByceNeonGreen.copy(alpha = 0.20f)),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(

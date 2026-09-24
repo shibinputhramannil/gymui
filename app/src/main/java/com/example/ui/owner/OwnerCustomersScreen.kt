@@ -194,7 +194,7 @@ private fun CustomerCardItem(
                     modifier = Modifier
                         .size(42.dp)
                         .clip(CircleShape)
-                        .background(Color(0x28A6CE39))
+                        .background(ByceNeonGreen.copy(alpha = 0.20f))
                         .border(1.dp, GlassBorderLight, CircleShape),
                     contentAlignment = Alignment.Center
                 ) {
@@ -344,7 +344,7 @@ private fun CustomerDetailDialog(
                         modifier = Modifier
                             .size(50.dp)
                             .clip(CircleShape)
-                            .background(Color(0x30A6CE39)),
+                            .background(ByceNeonGreen.copy(alpha = 0.25f)),
                         contentAlignment = Alignment.Center
                     ) {
                         Text(

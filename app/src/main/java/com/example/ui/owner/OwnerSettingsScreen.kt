@@ -78,7 +78,7 @@ fun OwnerSettingsScreen(
                     modifier = Modifier
                         .weight(1f)
                         .clip(RoundedCornerShape(12.dp))
-                        .background(if (isSelected) Color(0x3578A336) else Color(0x15FFFFFF))
+                        .background(if (isSelected) ByceNeonGreen.copy(alpha = 0.25f) else Color(0x15FFFFFF))
                         .border(1.dp, if (isSelected) ByceNeonGreen else Color.Transparent, RoundedCornerShape(12.dp))
                         .clickable { selectedSection = sec }
                         .padding(vertical = 8.dp),
@@ -112,7 +112,7 @@ fun OwnerSettingsScreen(
                                 modifier = Modifier
                                     .size(54.dp)
                                     .clip(CircleShape)
-                                    .background(Color(0x30A6CE39))
+                                    .background(ByceNeonGreen.copy(alpha = 0.25f))
                                     .border(1.dp, ByceNeonGreen, CircleShape),
                                 contentAlignment = Alignment.Center
                             ) {
